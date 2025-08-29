@@ -11,6 +11,6 @@ public class Game {
         this.player2 = p2;
     }
 
-    //ask current player for move (start  w/ p1?). apply move on board (place(move)). check winner() or draw. swap player.
+    //ask current player for move (start  w/ p1?). apply move on board (place(move)). check winner() or draw (isFull()). swap player.
     public void Run(){};
 }
