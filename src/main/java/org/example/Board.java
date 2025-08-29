@@ -31,6 +31,8 @@ public class Board {
             }
         }
     }
-    public void place(Move mv){}
+    public void place(Move mv){
+
+    }
 
 }
