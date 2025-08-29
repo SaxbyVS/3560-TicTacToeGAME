@@ -14,4 +14,16 @@ public class Move {
         }
         this.mark = mark;
     }
+
+    public int getRow() {
+        return row;
+    }
+
+    public int getCol() {
+        return col;
+    }
+
+    public Mark getMark() {
+        return mark;
+    }
 }
