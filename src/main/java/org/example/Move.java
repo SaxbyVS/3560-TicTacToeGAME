@@ -1,5 +1,10 @@
 package org.example;
 
+/**
+ * The Move class represents a single turn in Tic-Tac-Toe.
+ * It stores the row, column, and the player's mark (X or O).
+ */
+
 public class Move {
     private int row;
     private int col;

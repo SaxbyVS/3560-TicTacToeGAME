@@ -1,7 +1,11 @@
 package org.example;
 import java.util.Scanner;
 
-//NOTES: lets just print in this class
+/**
+ * HumanPlayer represents a player controlled by keyboard input.
+ * It prompts the user to choose a cell (1–9), validates the choice,
+ * and returns a Move with the player’s mark.
+ */
 
 public class HumanPlayer extends Player{
 
