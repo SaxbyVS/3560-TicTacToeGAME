@@ -1,5 +1,20 @@
 package org.example;
 
+/**
+ * The Board class represents a 3x3 Tic-Tac-Toe game board.
+ * It manages the game state, enforces rules, and checks outcomes.
+ *
+ * Responsibilities:
+ * - Stores the current grid of Marks (X, O, EMPTY).
+ * - Initializes an empty 3x3 board at the start of the game.
+ * - Validates and applies moves with the place() method.
+ * - Provides safe access to cells via getCell().
+ * - Detects a winning condition across rows, columns, and diagonals.
+ * - Determines if the board is full (draw state).
+ *
+ * This class encapsulates the game model logic and ensures
+ * only valid moves are allowed while tracking the current game state.
+ */
 
 public class Board {
     private final int size =3;
@@ -47,20 +62,26 @@ public class Board {
         }
         return true;
     }
-    public Mark getCell(int row, int col){
+    public Mark getCell(int row, int col) {
+        if (row < 0 || row >= size || col < 0 || col >= size) {
+            throw new IllegalArgumentException("Invalid cell coordinates: (" + row + "," + col + ")");
+        }
         return grid[row][col];
     }
-    public void reset(){ //sets all cells to empty mark
-        for(int i = 0; i < size; i++){
-            for(int j = 0; j < size; j++){
-                this.grid[i][j] = Mark.EMPTY;
-            }
-        }
-    }
-    public void place(Move mv){
-        //validate mv w/ IllegalArgumentException?
 
-        this.grid[mv.getRow()][mv.getCol()] = mv.getMark();
+    public void place(Move mv) {
+        int row = mv.getRow();
+        int col = mv.getCol();
+
+        if (row < 0 || row >= size || col < 0 || col >= size) {
+            throw new IllegalArgumentException("Move out of bounds: (" + row + "," + col + ")");
+        }
+
+        if (grid[row][col] != Mark.EMPTY) {
+            throw new IllegalArgumentException("Cell already occupied: (" + row + "," + col + ")");
+        }
+
+        this.grid[row][col] = mv.getMark();
     }
 
 }
