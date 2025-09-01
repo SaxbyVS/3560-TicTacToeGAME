@@ -19,7 +19,7 @@ public class HumanPlayer extends Player{
         int row, col;
         System.out.println("\n-------------\n| 1 | 2 | 3 |\n| 4 | 5 | 6 |\n| 7 | 8 | 9 |\n-------------");
         while (true) {
-            System.out.println("Please enter a move [1-9]: ");
+            System.out.println("Please enter a move [1-9] for "+this.getMark()+": ");
             int userInput = scanner.nextInt();
             if (userInput < 1 || userInput > 9) {
                 System.out.println("Invalid move");
