@@ -84,4 +84,12 @@ public class Board {
         this.grid[row][col] = mv.getMark();
     }
 
+    public void reset(){ //sets all cells to empty mark
+        for(int i = 0; i < size; i++){
+            for(int j = 0; j < size; j++){
+                this.grid[i][j] = Mark.EMPTY;
+            }
+        }
+    }
+
 }

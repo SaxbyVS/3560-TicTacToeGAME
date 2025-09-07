@@ -19,7 +19,9 @@ public class HumanPlayer extends Player {
 
         int row, col;
         while (true) {
+
             System.out.print("Player " + this.getMark() + ", enter a move [1-9]: ");
+
             int userInput = scanner.nextInt();
 
             if (userInput < 1 || userInput > 9) {
