@@ -59,15 +59,22 @@ public class Game {
     }
 
     private void printBoard() {
-        System.out.println();
+        int cellNumber = 1;
+
         for (int r = 0; r < 3; r++) {
+            System.out.println("+---+---+---+");
             for (int c = 0; c < 3; c++) {
-                Mark cell = gameBoard.getCell(r, c);
-                System.out.print((cell == Mark.EMPTY ? "-" : cell) + " ");
+                if (gameBoard.getCell(r, c) == Mark.EMPTY) {
+                    System.out.print("| " + cellNumber + " ");
+                } else {
+                    System.out.print("| " + gameBoard.getCell(r, c) + " ");
+                }
+                cellNumber++;
             }
-            System.out.println();
+            System.out.println("|");
         }
-        System.out.println();
+        System.out.println("+---+---+---+");
     }
+
 }
 
